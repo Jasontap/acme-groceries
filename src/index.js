@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import connect from 'react-redux'
+import { connect } from 'react-redux'
 import Groceries from './Groceries'
 import axios from 'axios'
 
@@ -35,6 +35,9 @@ const loadGroceries = (groceries) => {
 }
 
 class _App extends Component {
+    componentDidMount(){
+        this.props.load();
+    }
     render() {
         return (
             <div>
